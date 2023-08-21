@@ -10,7 +10,7 @@ M.telescope = {
     },
     ["<leader>fS"] = {
       function()
-        require("telescope.builtin").lsp_workspace_symbols()
+        require("telescope.builtin").lsp_dynamic_workspace_symbols()
       end,
       "Search document symbols",
     },

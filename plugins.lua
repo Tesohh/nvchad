@@ -1,5 +1,5 @@
 local plugins = {
-  ---------- LSP + DAP ----------
+  ---------- LSP + DAP + Testing ----------
   { "williamboman/mason.nvim" },
   {
     "neovim/nvim-lspconfig",
@@ -25,9 +25,26 @@ local plugins = {
   {
     "rcarriga/nvim-dap-ui",
     dependencies = "mfussenegger/nvim-dap",
+    opts = require "custom.configs.dapuiopts",
     config = function(_, opts)
       require("dapui").setup(opts)
     end,
+  },
+  {
+    "nvim-neotest/neotest",
+    ft = "go",
+    dependencies = { "antoinemadec/FixCursorHold.nvim", "nvim-neotest/neotest-go" },
+    config = function()
+      require("neotest").setup {
+        adapters = {
+          require "neotest-go",
+        },
+      }
+    end,
+    vim.api.nvim_create_user_command("Test", function()
+      -- require("neotest").run.run(vim.fn.getcwd())
+      vim.cmd [[Neotest summary open]]
+    end, {}),
   },
 
   ---------- GO-SPECIFIC ----------
