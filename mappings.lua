@@ -1,5 +1,18 @@
 local M = {}
 
+M.lspconfig = {
+  plugin = true,
+  i = {
+    ["<C-s>"] = {
+      function()
+        vim.lsp.buf.signature_help()
+        vim.lsp.buf.signature_help()
+      end,
+      "LSP signature help",
+    },
+  },
+}
+
 M.telescope = {
   n = {
     ["<leader>fs"] = {
