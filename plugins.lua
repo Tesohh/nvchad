@@ -70,6 +70,15 @@ local plugins = {
       vim.cmd [[silent! GoInstallDeps]]
     end,
   },
+  ---------- WEB DEV ----------
+  {
+    "windwp/nvim-ts-autotag",
+    event = "BufEnter",
+    config = function(_, opts)
+      require("nvim-ts-autotag").setup(opts)
+    end,
+  },
+
   ---------- OTHER ----------
   {
     "nvim-telescope/telescope.nvim",
