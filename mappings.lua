@@ -1,11 +1,52 @@
 local M = {}
 
+M.harpoon = {
+  plugin = true,
+  n = {
+    ["<leader>a"] = {
+      function()
+        require("harpoon.mark").add_file()
+      end,
+      "Harpoon Add file",
+    },
+    ["<C-e>"] = {
+      function()
+        require("harpoon.ui").toggle_quick_menu()
+      end,
+      "Harpoon toggle quick menu",
+    },
+    ["<leader>1"] = {
+      function()
+        require("harpoon.ui").nav_file(1)
+      end,
+      "Harpoon file 1",
+    },
+    ["<leader>2"] = {
+      function()
+        require("harpoon.ui").nav_file(2)
+      end,
+      "Harpoon file 2",
+    },
+    ["<leader>3"] = {
+      function()
+        require("harpoon.ui").nav_file(3)
+      end,
+      "Harpoon file 3",
+    },
+    ["<leader>4"] = {
+      function()
+        require("harpoon.ui").nav_file(4)
+      end,
+      "Harpoon file 4",
+    },
+  },
+}
+
 M.lspconfig = {
   plugin = true,
   i = {
     ["<C-s>"] = {
       function()
-        vim.lsp.buf.signature_help()
         vim.lsp.buf.signature_help()
       end,
       "LSP signature help",

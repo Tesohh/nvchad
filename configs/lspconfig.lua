@@ -1,5 +1,5 @@
 -- Servers to be setup with basic settings
-local basic_servers = { "tsserver", "svelte", "emmet_ls", "cssls", "html", "jsonls", "tailwindcss" }
+local basic_servers = { "tsserver", "svelte", "cssls", "html", "jsonls", "tailwindcss" }
 
 local on_attach = require("plugins.configs.lspconfig").on_attach
 local capabilities = require("plugins.configs.lspconfig").capabilities

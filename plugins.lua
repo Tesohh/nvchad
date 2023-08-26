@@ -81,6 +81,13 @@ local plugins = {
 
   ---------- OTHER ----------
   {
+    "theprimeagen/harpoon",
+    lazy = false,
+    config = function(_, _)
+      require("core.utils").load_mappings "harpoon"
+    end,
+  },
+  {
     "nvim-telescope/telescope.nvim",
     opts = {
       defaults = {

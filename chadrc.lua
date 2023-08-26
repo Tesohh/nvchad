@@ -29,6 +29,9 @@ M.ui = {
       disabled = true,
     },
   },
+  tabufline = {
+    enabled = false,
+  },
 }
 M.plugins = "custom.plugins"
 

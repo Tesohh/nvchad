@@ -27,6 +27,9 @@ local opts = {
     null_ls.builtins.formatting.goimports,
     null_ls.builtins.code_actions.impl,
     null_ls.builtins.diagnostics.staticcheck,
+
+    -- js/ts/web
+    null_ls.builtins.formatting.prettierd.with { extra_filetypes = { "svelte" } },
   },
 }
 
